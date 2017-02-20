@@ -1,7 +1,23 @@
-angular.module('demo', [])
-.controller('Hello', function($scope, $http) {
-    $http.get('http://rest-service.guides.spring.io/greeting').
-        then(function(response) {
-            $scope.greeting = response.data;
-        });
+angular.module('pairs', [])
+.controller('pairData', function($scope, $http) {
+
+$scope.rates = [];  
+
+ 
+
+
+
+$scope.getPairs = function(value){
+       $http.get('http://api.fixer.io/latest?base=USD&symbols='+ $scope.c1 +','+$scope.c2).
+                then(function(response) {
+                    $scope.returnedData = response.data;
+
+                });
+}
+
+        
+        
+
+ 
 });
+

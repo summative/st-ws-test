@@ -2,11 +2,11 @@
 
 
 <!DOCTYPE html>
-<html ng-app="demo">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<html ng-app="pairs">
+
 	<head>
 		<title>Systech Development</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     	<script src="public/test.js"></script>
 	</head>
 
@@ -14,9 +14,18 @@
 
 <img src="images/systech.png"  width="240" height="96" alt="systech.io Logo">
 
-<div ng-controller="Hello">
-			<p>The ID is {{greeting.id}}</p>
-			<p>The content is {{greeting.content}}</p>
+
+
+<div ng-controller="pairData">
+  <p>Base Currency: <input type="text" ng-change="getPairs(value)" ng-model="b1"></p></p>
+  <p>Currency 1 : <input type="text" ng-change="getPairs(value)" ng-model="c1"></p>
+  <p>Currency 2 : <input type="text" ng-change="getPairs(value)" ng-model="c2"></p>
+
+
+      <p>The first rate is {{returnedData.rates}}</p>
+	
+			<p>The base rate is {{returnedData.base}}</p>
+
 		</div>
 
 </body>
